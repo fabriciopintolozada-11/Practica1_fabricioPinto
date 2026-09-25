@@ -25,6 +25,10 @@ pnpm-debug.log*
 *.md
 !README.md
 !AGENTS.md
+!.codex/skills/storefront-audit/SKILL.md
+!.codex/skills/storefront-audit/README.md
+!.codex/skills/storefront-audit/assets/
+!.codex/skills/storefront-audit/assets/report-template.md
 
 # Operating system files
 .DS_Store
