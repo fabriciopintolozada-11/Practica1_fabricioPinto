@@ -1,0 +1,18 @@
+{
+  "checks": [
+    {"label": "README documenta los 10 errores", "file": "README.md", "pattern": "10 errores"},
+    {"label": "App principal existe", "file": "src/App.jsx", "pattern": "function App"},
+    {"label": "Carga productos desde DummyJSON", "file": "src/App.jsx", "pattern": "https://dummyjson\\.com/products"},
+    {"label": "Usa estado para el carrito", "file": "src/App.jsx", "pattern": "useState\\(\\[\\]\\)"},
+    {"label": "Renderiza tarjetas de producto", "file": "src/ProductCard.jsx", "pattern": "function ProductCard"},
+    {"label": "Renderiza panel de carrito", "file": "src/Cart.jsx", "pattern": "function Cart"},
+    {"label": "Tiene script de build", "file": "package.json", "pattern": "\\\"build\\\"\\s*:\\s*\\\"vite build\\\""}
+  ],
+  "risks": [
+    {"label": "Mutacion directa del carrito", "file": "src/App.jsx", "pattern": "\\bcart\\.push\\(", "note": "Puede impedir un renderizado confiable."},
+    {"label": "Eliminacion por categoria", "file": "src/App.jsx", "pattern": "\\.filter\\(\\(c\\)\\s*=>\\s*c\\.category\\s*!==\\s*item\\.category\\)", "note": "Puede eliminar productos no seleccionados."},
+    {"label": "Cantidad puede bajar de 1", "file": "src/App.jsx", "pattern": "quantity:\\s*item\\.quantity\\s*\\+\\s*delta", "note": "Puede producir cantidades cero o negativas."},
+    {"label": "Descuento tratado como monto fijo", "file": "src/App.jsx", "pattern": "item\\.price\\s*-\\s*item\\.discountPercentage", "note": "El descuento es un porcentaje."},
+    {"label": "Busqueda sensible a mayusculas", "file": "src/App.jsx", "pattern": "p\\.title\\.includes\\(search\\)", "note": "Puede ocultar coincidencias validas."}
+  ]
+}

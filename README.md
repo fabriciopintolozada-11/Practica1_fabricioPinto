@@ -11,6 +11,30 @@ npm run dev
 
 Abre la dirección que muestra la terminal (normalmente http://localhost:5173).
 
+## Skill de auditoría
+
+Este repositorio incluye la skill local `storefront-audit`, ubicada en
+`.codex/skills/storefront-audit/`. Sirve para revisar automáticamente la
+tienda React y detectar patrones de riesgo.
+
+Ejecutarla desde la raíz de `prac1`:
+
+```bash
+python .codex/skills/storefront-audit/scripts/audit_storefront.py . --output reports/storefront-audit.md
+```
+
+El resultado se genera en `reports/storefront-audit.md`. La skill incluye sus
+reglas en `references/checks.json`, una plantilla en `assets/report-template.md`
+y documentación en `SKILL.md` y `README.md`.
+
+Para probar una ruta inválida:
+
+```bash
+python .codex/skills/storefront-audit/scripts/audit_storefront.py carpeta-que-no-existe
+```
+
+Debe informar que la ruta no existe y terminar con código 2.
+
 ## Tu tarea
 
 1. Usa la aplicación (busca, filtra, agrega al carrito, cambia cantidades, elimina, paga) y anota todo lo que funcione o se vea mal.

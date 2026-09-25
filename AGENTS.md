@@ -2,7 +2,7 @@
 
 ## Project Structure & Module Organization
 
-This repository contains a small React 18 + Vite storefront. Source code lives in `src/`: `main.jsx` mounts the app, `App.jsx` owns application state and data loading, `ProductCard.jsx` renders product cards, `Cart.jsx` renders the cart panel, and `App.css` contains global styling. Static entry files are `index.html` and `vite.config.js`. Build output is generated in `dist/` and must not be committed. Dependencies live in `node_modules/` and are restored with `npm i`.
+This repository contains a small React 18 + Vite storefront. Source code lives in `src/`: `main.jsx` mounts the app, `App.jsx` owns application state and data loading, `ProductCard.jsx` renders product cards, `Cart.jsx` renders the cart panel, and `App.css` contains global styling. The custom skill lives in `.codex/skills/storefront-audit/`, with instructions in `SKILL.md`, executable code in `scripts/`, rules in `references/`, and the report template in `assets/`. Static entry files are `index.html` and `vite.config.js`. Build output is generated in `dist/` and must not be committed. Dependencies live in `node_modules/` and are restored with `npm i`.
 
 ## Build, Test, and Development Commands
 
@@ -31,6 +31,12 @@ npm run preview
 ```
 
 Serves the production build locally for a final check.
+
+Run the custom audit skill with:
+
+```bash
+python .codex/skills/storefront-audit/scripts/audit_storefront.py . --output reports/storefront-audit.md
+```
 
 ## Coding Style & Naming Conventions
 
